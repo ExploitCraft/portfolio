@@ -11,7 +11,7 @@ export const PERSON = {
 export const PROJECTS = [
   {
     name:        "ReconNinja",
-    version:     "v3.3.0",
+    version:     "v4.0.0",
     url:         "https://github.com/ExploitCraft/ReconNinja",
     description: "14-phase automated reconnaissance framework for security researchers.",
     details: [
