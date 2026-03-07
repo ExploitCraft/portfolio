@@ -17,12 +17,12 @@ export const PROJECTS = [
     details: [
       "Subdomain enumeration, RustScan, async TCP, Masscan, Nmap",
       "Web discovery — httpx, WhatWeb, Nikto, Feroxbuster, Nuclei, Aquatone",
-      "CVE lookup via NVD API",
+      "CVE lookup via NVD API, Shodan, VirusTotal, WHOIS, Wayback, SSL",
       "AI-powered threat analysis — Groq, Ollama, Gemini, OpenAI",
       "Plugin system, resume/checkpoint support, dark-mode HTML reports",
     ],
     tags:   ["Python", "Security", "CLI", "Open Source"],
-    stats:  "533 tests · MIT",
+    stats:  "597 tests · MIT",
   },
   {
     name:        "VaultHound",
