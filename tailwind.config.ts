@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,28 +9,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
-      },
       colors: {
-        bg: "#0c0c0e",
-        surface: "#111113",
-        border: "#1e1e22",
-        muted: "#52525b",
-        accent: "#e4e4e7",
-        primary: "#f4f4f5",
-        dim: "#71717a",
-        highlight: "#a78bfa",
+        "bg-base": "#0a0a0a",
+        "bg-surface": "#111111",
+        "bg-border": "#1e1e1e",
+        "accent-green": "#00ff88",
+        "accent-cyan": "#00ccff",
+        "accent-red": "#ff4444",
+        "text-primary": "#e2e8f0",
+        "text-muted": "#64748b",
       },
-      animation: {
-        "fade-up": "fadeUp 0.6s ease forwards",
-      },
-      keyframes: {
-        fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
+      fontFamily: {
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
     },
   },

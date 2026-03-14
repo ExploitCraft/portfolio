@@ -1,21 +1,23 @@
-import Navbar     from "@/components/Navbar";
-import Hero       from "@/components/Hero";
-import About      from "@/components/About";
-import Projects   from "@/components/Projects";
-import TechStack  from "@/components/TechStack";
-import Contact    from "@/components/Contact";
-import Footer     from "@/components/Footer";
+import { Navbar } from "@/components/ui/Navbar";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { Skills } from "@/components/sections/Skills";
+import { Projects } from "@/components/sections/Projects";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/ui/Footer";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-bg">
+    <main className="min-h-screen">
       <Navbar />
       <Hero />
       <About />
+      <Skills />
       <Projects />
-      <TechStack />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }
