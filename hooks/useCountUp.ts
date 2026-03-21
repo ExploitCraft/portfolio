@@ -1,24 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export function useCountUp(target: number, duration: number = 2000, isInView: boolean = false) {
-  const [count, setCount] = useState(0);
+/**
+ * Animates from 0 → target over `duration` ms using requestAnimationFrame.
+ * Returns the current display value as a string (e.g. "1,234").
+ */
+export function useCountUp(target: number | null, duration = 900): string {
+  const [display, setDisplay] = useState("–");
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (target === null) return;
+    if (target === 0) { setDisplay("0"); return; }
 
-    let startTimestamp: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      setCount(Math.floor(progress * target));
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    window.requestAnimationFrame(step);
-  }, [target, duration, isInView]);
+    const start = performance.now();
 
-  return count;
+    function tick(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      setDisplay(current.toLocaleString());
+      if (progress < 1) rafRef.current = requestAnimationFrame(tick);
+    }
+
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [target, duration]);
+
+  return display;
 }
