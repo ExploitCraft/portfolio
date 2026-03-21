@@ -96,7 +96,7 @@ export const portfolioConfig = {
       ],
       techStack: ["Python", "PyPI"],
       github: "https://github.com/ExploitCraft/VaultHound",
-      pypi: "https://pypi.org/user/ExploitCraft/",
+      pypi: "https://pypi.org/user/ExploitCraft/VaultHound",
       language: "Python",
       license: "MIT",
       featured: false,
