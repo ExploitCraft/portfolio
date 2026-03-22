@@ -176,7 +176,7 @@ export const portfolioConfig = {
       name: "gitdork",
       emoji: "🎯",
       version: "v0.1.0",
-      status: "In Development" as const,
+      status: "Active" as const,
       pinned: false,
       pypiSlug: "",
       description:
