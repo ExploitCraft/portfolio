@@ -57,7 +57,7 @@ export const portfolioConfig = {
     {
       name: "ReconNinja",
       emoji: "🥷",
-      version: "v8.2.1",
+      version: "v8.3.0",
       status: "Active" as const,
       pinned: true,
       pypiSlug: "reconinja",
